@@ -1,0 +1,12 @@
+[
+  {
+    "id": "cert-1",
+    "title": "AWS Certified Developer",
+    "issuer": "Amazon Web Services",
+    "issueDate": "2023-06-15",
+    "expiryDate": "2026-06-15",
+    "credentialId": "AWS-DEV-123456",
+    "verificationUrl": "https://aws.amazon.com/verification/AWS-DEV-123456",
+    "image": "/images/certificates/aws-developer.jpg"
+  }
+]

@@ -1,2 +1,2 @@
-// Service exports will be added here as services are created
-export {}
+// Service exports
+export { ContentManager, contentManager } from "./ContentManager";

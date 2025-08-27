@@ -1,0 +1,48 @@
+{
+  "experience": [
+    {
+      "id": "exp-1",
+      "company": "Tech Corp",
+      "position": "Senior Full Stack Developer",
+      "startDate": "2022-01-01",
+      "endDate": null,
+      "current": true,
+      "description": "Lead development of web applications using React and Node.js",
+      "achievements": [
+        "Improved application performance by 40%",
+        "Led a team of 4 developers"
+      ],
+      "technologies": ["React", "Node.js", "TypeScript", "AWS"]
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-1",
+      "institution": "University of Technology",
+      "degree": "Bachelor of Science",
+      "field": "Computer Science",
+      "startDate": "2016-09-01",
+      "endDate": "2020-05-01",
+      "gpa": "3.8",
+      "description": "Focused on software engineering and web development"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend",
+      "skills": [
+        {
+          "name": "React",
+          "level": "Expert",
+          "yearsOfExperience": 5
+        },
+        {
+          "name": "TypeScript",
+          "level": "Advanced",
+          "yearsOfExperience": 3
+        }
+      ]
+    }
+  ],
+  "downloadUrl": "/resume/john-doe-resume.pdf"
+}

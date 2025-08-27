@@ -14,11 +14,11 @@ export type {
     CertificateData,
     SocialLinkData,
     ConfigData
-} from "./portfolio"
+} from "./portfolio";
 
 export type {
     ValidationError
-} from "../utils/validation"
+} from "../utils/validation";
 
 // Re-export validation functions for convenience
 export {
@@ -29,7 +29,7 @@ export {
     validatePortfolioData,
     validateProfileData,
     validateProjectData
-} from "../utils/validation"
+} from "../utils/validation";
 
 // Re-export helper functions for convenience
 export {
@@ -42,4 +42,4 @@ export {
     formatDateRange,
     getUniqueTechnologies,
     searchProjects
-} from "../utils/dataHelpers"
+} from "../utils/dataHelpers";

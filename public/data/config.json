@@ -1,0 +1,13 @@
+{
+  "theme": "auto",
+  "language": "en",
+  "analytics": {
+    "enabled": false,
+    "trackingId": ""
+  },
+  "seo": {
+    "title": "John Doe - Full Stack Developer",
+    "description": "Portfolio of John Doe, a passionate full-stack developer with expertise in React, Node.js, and modern web technologies.",
+    "keywords": ["developer", "react", "nodejs", "typescript", "web development"]
+  }
+}

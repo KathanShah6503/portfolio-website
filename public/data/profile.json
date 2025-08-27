@@ -1,0 +1,9 @@
+{
+  "name": "John Doe",
+  "title": "Full Stack Developer",
+  "photo": "/images/profile.jpg",
+  "summary": "Passionate software developer with 5+ years of experience building web applications.",
+  "description": "I'm a dedicated full-stack developer who loves creating efficient, scalable solutions. My expertise spans modern web technologies including React, Node.js, and cloud platforms.",
+  "location": "San Francisco, CA",
+  "email": "john.doe@example.com"
+}

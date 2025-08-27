@@ -40,7 +40,7 @@ export default tseslint.config([
         { allowConstantExport: true },
       ],
       // Stylistic formatting rules
-      '@stylistic/semi': ['error', 'never'],
+      '@stylistic/semi': "error",
       '@stylistic/quotes': ['error', 'double'],
       '@stylistic/indent': ['error', 4],
       '@stylistic/comma-dangle': "error",

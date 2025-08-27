@@ -1,0 +1,15 @@
+[
+  {
+    "id": "project-1",
+    "title": "E-commerce Platform",
+    "description": "A modern e-commerce platform built with React and Node.js",
+    "longDescription": "A full-featured e-commerce platform with user authentication, product catalog, shopping cart, and payment processing. Built using React, Node.js, Express, and MongoDB.",
+    "technologies": ["React", "Node.js", "Express", "MongoDB", "Stripe"],
+    "images": ["/images/projects/ecommerce-1.jpg", "/images/projects/ecommerce-2.jpg"],
+    "liveUrl": "https://example-ecommerce.com",
+    "githubUrl": "https://github.com/johndoe/ecommerce-platform",
+    "category": "Web Application",
+    "featured": true,
+    "completedDate": "2024-01-15"
+  }
+]

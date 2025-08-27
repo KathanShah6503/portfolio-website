@@ -2,7 +2,7 @@
  * Unit tests for data helper functions
  */
 
-import { describe, it, expect } from "vitest"
+import { describe, it, expect } from "vitest";
 import {
     createDefaultPortfolioData,
     generateId,
@@ -16,43 +16,43 @@ import {
     searchProjects,
     clonePortfolioData,
     mergePortfolioData
-} from "../dataHelpers"
+} from "../dataHelpers";
 
-import type { ProjectData, ExperienceItem } from "../../types/portfolio"
+import type { ProjectData, ExperienceItem } from "../../types/portfolio";
 
 describe("Data Helper Functions", () => {
     describe("createDefaultPortfolioData", () => {
         it("should create a valid default portfolio structure", () => {
-            const defaultData = createDefaultPortfolioData()
+            const defaultData = createDefaultPortfolioData();
       
-            expect(defaultData).toHaveProperty("profile")
-            expect(defaultData).toHaveProperty("projects")
-            expect(defaultData).toHaveProperty("resume")
-            expect(defaultData).toHaveProperty("certificates")
-            expect(defaultData).toHaveProperty("socialLinks")
-            expect(defaultData).toHaveProperty("config")
+            expect(defaultData).toHaveProperty("profile");
+            expect(defaultData).toHaveProperty("projects");
+            expect(defaultData).toHaveProperty("resume");
+            expect(defaultData).toHaveProperty("certificates");
+            expect(defaultData).toHaveProperty("socialLinks");
+            expect(defaultData).toHaveProperty("config");
       
-            expect(Array.isArray(defaultData.projects)).toBe(true)
-            expect(Array.isArray(defaultData.certificates)).toBe(true)
-            expect(Array.isArray(defaultData.socialLinks)).toBe(true)
-        })
-    })
+            expect(Array.isArray(defaultData.projects)).toBe(true);
+            expect(Array.isArray(defaultData.certificates)).toBe(true);
+            expect(Array.isArray(defaultData.socialLinks)).toBe(true);
+        });
+    });
 
     describe("generateId", () => {
         it("should generate unique IDs with prefix", () => {
-            const id1 = generateId("test")
-            const id2 = generateId("test")
+            const id1 = generateId("test");
+            const id2 = generateId("test");
       
-            expect(id1).toMatch(/^test-\d+-[a-z0-9]+$/)
-            expect(id2).toMatch(/^test-\d+-[a-z0-9]+$/)
-            expect(id1).not.toBe(id2)
-        })
+            expect(id1).toMatch(/^test-\d+-[a-z0-9]+$/);
+            expect(id2).toMatch(/^test-\d+-[a-z0-9]+$/);
+            expect(id1).not.toBe(id2);
+        });
 
         it("should use default prefix when none provided", () => {
-            const id = generateId()
-            expect(id).toMatch(/^item-\d+-[a-z0-9]+$/)
-        })
-    })
+            const id = generateId();
+            expect(id).toMatch(/^item-\d+-[a-z0-9]+$/);
+        });
+    });
 
     describe("sortProjectsByDate", () => {
         const projects: ProjectData[] = [
@@ -89,23 +89,23 @@ describe("Data Helper Functions", () => {
                 featured: false,
                 completedDate: "2023-03-10"
             }
-        ]
+        ];
 
         it("should sort projects by completion date (newest first)", () => {
-            const sorted = sortProjectsByDate(projects)
+            const sorted = sortProjectsByDate(projects);
       
-            expect(sorted[0]?.id).toBe("2") // June 2023
-            expect(sorted[1]?.id).toBe("3") // March 2023
-            expect(sorted[2]?.id).toBe("1") // January 2023
-        })
+            expect(sorted[0]?.id).toBe("2"); // June 2023
+            expect(sorted[1]?.id).toBe("3"); // March 2023
+            expect(sorted[2]?.id).toBe("1"); // January 2023
+        });
 
         it("should not mutate original array", () => {
-            const originalOrder = projects.map(p => p.id)
-            sortProjectsByDate(projects)
+            const originalOrder = projects.map(p => p.id);
+            sortProjectsByDate(projects);
       
-            expect(projects.map(p => p.id)).toEqual(originalOrder)
-        })
-    })
+            expect(projects.map(p => p.id)).toEqual(originalOrder);
+        });
+    });
 
     describe("filterProjectsByCategory", () => {
         const projects: ProjectData[] = [
@@ -131,19 +131,19 @@ describe("Data Helper Functions", () => {
                 featured: false,
                 completedDate: "2023-06-20"
             }
-        ]
+        ];
 
         it("should filter projects by category (case insensitive)", () => {
-            const webProjects = filterProjectsByCategory(projects, "web development")
-            const mobileProjects = filterProjectsByCategory(projects, "Mobile Development")
+            const webProjects = filterProjectsByCategory(projects, "web development");
+            const mobileProjects = filterProjectsByCategory(projects, "Mobile Development");
       
-            expect(webProjects).toHaveLength(1)
-            expect(webProjects[0]?.id).toBe("1")
+            expect(webProjects).toHaveLength(1);
+            expect(webProjects[0]?.id).toBe("1");
       
-            expect(mobileProjects).toHaveLength(1)
-            expect(mobileProjects[0]?.id).toBe("2")
-        })
-    })
+            expect(mobileProjects).toHaveLength(1);
+            expect(mobileProjects[0]?.id).toBe("2");
+        });
+    });
 
     describe("getFeaturedProjects", () => {
         const projects: ProjectData[] = [
@@ -169,45 +169,45 @@ describe("Data Helper Functions", () => {
                 featured: false,
                 completedDate: "2023-06-20"
             }
-        ]
+        ];
 
         it("should return only featured projects", () => {
-            const featured = getFeaturedProjects(projects)
+            const featured = getFeaturedProjects(projects);
       
-            expect(featured).toHaveLength(1)
-            expect(featured[0]?.id).toBe("1")
-            expect(featured[0]?.featured).toBe(true)
-        })
-    })
+            expect(featured).toHaveLength(1);
+            expect(featured[0]?.id).toBe("1");
+            expect(featured[0]?.featured).toBe(true);
+        });
+    });
 
     describe("formatDate", () => {
         it("should format date string correctly", () => {
-            const formatted = formatDate("2023-12-25")
-            expect(formatted).toBe("December 25, 2023")
-        })
+            const formatted = formatDate("2023-12-25");
+            expect(formatted).toBe("December 25, 2023");
+        });
 
         it("should accept custom formatting options", () => {
-            const formatted = formatDate("2023-12-25", { year: "numeric", month: "short" })
-            expect(formatted).toBe("Dec 2023")
-        })
-    })
+            const formatted = formatDate("2023-12-25", { year: "numeric", month: "short" });
+            expect(formatted).toBe("Dec 2023");
+        });
+    });
 
     describe("formatDateRange", () => {
         it("should format date range with end date", () => {
-            const range = formatDateRange("2023-01-15", "2023-06-20")
-            expect(range).toBe("Jan 2023 - Jun 2023")
-        })
+            const range = formatDateRange("2023-01-15", "2023-06-20");
+            expect(range).toBe("Jan 2023 - Jun 2023");
+        });
 
         it("should format current position", () => {
-            const range = formatDateRange("2023-01-15", undefined, true)
-            expect(range).toBe("Jan 2023 - Present")
-        })
+            const range = formatDateRange("2023-01-15", undefined, true);
+            expect(range).toBe("Jan 2023 - Present");
+        });
 
         it("should format single date when no end date", () => {
-            const range = formatDateRange("2023-01-15")
-            expect(range).toBe("Jan 2023")
-        })
-    })
+            const range = formatDateRange("2023-01-15");
+            expect(range).toBe("Jan 2023");
+        });
+    });
 
     describe("calculateTotalExperience", () => {
         const experience: ExperienceItem[] = [
@@ -232,13 +232,13 @@ describe("Data Helper Functions", () => {
                 achievements: [],
                 technologies: ["TypeScript"]
             }
-        ]
+        ];
 
         it("should calculate total years of experience", () => {
-            const totalYears = calculateTotalExperience(experience)
-            expect(totalYears).toBeGreaterThan(0)
-        })
-    })
+            const totalYears = calculateTotalExperience(experience);
+            expect(totalYears).toBeGreaterThan(0);
+        });
+    });
 
     describe("getUniqueTechnologies", () => {
         const projects: ProjectData[] = [
@@ -264,15 +264,15 @@ describe("Data Helper Functions", () => {
                 featured: false,
                 completedDate: "2023-06-20"
             }
-        ]
+        ];
 
         it("should return unique technologies sorted alphabetically", () => {
-            const technologies = getUniqueTechnologies(projects)
+            const technologies = getUniqueTechnologies(projects);
       
-            expect(technologies).toEqual(["Express", "Node.js", "React", "TypeScript", "Vue"])
-            expect(technologies).toHaveLength(5)
-        })
-    })
+            expect(technologies).toEqual(["Express", "Node.js", "React", "TypeScript", "Vue"]);
+            expect(technologies).toHaveLength(5);
+        });
+    });
 
     describe("searchProjects", () => {
         const projects: ProjectData[] = [
@@ -298,61 +298,61 @@ describe("Data Helper Functions", () => {
                 featured: false,
                 completedDate: "2023-06-20"
             }
-        ]
+        ];
 
         it("should search by title", () => {
-            const results = searchProjects(projects, "dashboard")
-            expect(results).toHaveLength(1)
-            expect(results[0]?.id).toBe("1")
-        })
+            const results = searchProjects(projects, "dashboard");
+            expect(results).toHaveLength(1);
+            expect(results[0]?.id).toBe("1");
+        });
 
         it("should search by technology", () => {
-            const results = searchProjects(projects, "react")
-            expect(results).toHaveLength(2) // Both projects use React/React Native
-        })
+            const results = searchProjects(projects, "react");
+            expect(results).toHaveLength(2); // Both projects use React/React Native
+        });
 
         it("should search by category", () => {
-            const results = searchProjects(projects, "mobile")
-            expect(results).toHaveLength(1)
-            expect(results[0]?.id).toBe("2")
-        })
+            const results = searchProjects(projects, "mobile");
+            expect(results).toHaveLength(1);
+            expect(results[0]?.id).toBe("2");
+        });
 
         it("should be case insensitive", () => {
-            const results = searchProjects(projects, "REACT")
-            expect(results).toHaveLength(2)
-        })
-    })
+            const results = searchProjects(projects, "REACT");
+            expect(results).toHaveLength(2);
+        });
+    });
 
     describe("clonePortfolioData", () => {
         it("should create a deep copy of portfolio data", () => {
-            const original = createDefaultPortfolioData()
-            original.profile.name = "John Doe"
+            const original = createDefaultPortfolioData();
+            original.profile.name = "John Doe";
       
-            const cloned = clonePortfolioData(original)
-            cloned.profile.name = "Jane Doe"
+            const cloned = clonePortfolioData(original);
+            cloned.profile.name = "Jane Doe";
       
-            expect(original.profile.name).toBe("John Doe")
-            expect(cloned.profile.name).toBe("Jane Doe")
-        })
-    })
+            expect(original.profile.name).toBe("John Doe");
+            expect(cloned.profile.name).toBe("Jane Doe");
+        });
+    });
 
     describe("mergePortfolioData", () => {
         it("should merge partial updates with existing data", () => {
-            const existing = createDefaultPortfolioData()
-            existing.profile.name = "John Doe"
-            existing.profile.email = "john@example.com"
+            const existing = createDefaultPortfolioData();
+            existing.profile.name = "John Doe";
+            existing.profile.email = "john@example.com";
       
             const updates: Partial<typeof existing> = {
                 profile: {
                     ...existing.profile,
                     name: "Jane Doe"
                 }
-            }
+            };
       
-            const merged = mergePortfolioData(existing, updates)
+            const merged = mergePortfolioData(existing, updates);
       
-            expect(merged.profile.name).toBe("Jane Doe")
-            expect(merged.profile.email).toBe("john@example.com") // Should preserve existing
-        })
-    })
-})
+            expect(merged.profile.name).toBe("Jane Doe");
+            expect(merged.profile.email).toBe("john@example.com"); // Should preserve existing
+        });
+    });
+});
