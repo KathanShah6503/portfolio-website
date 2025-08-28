@@ -1,15 +1,92 @@
 [
   {
     "id": "project-1",
-    "title": "E-commerce Platform",
-    "description": "A modern e-commerce platform built with React and Node.js",
-    "longDescription": "A full-featured e-commerce platform with user authentication, product catalog, shopping cart, and payment processing. Built using React, Node.js, Express, and MongoDB.",
-    "technologies": ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-    "images": ["/images/projects/ecommerce-1.jpg", "/images/projects/ecommerce-2.jpg"],
-    "liveUrl": "https://example-ecommerce.com",
-    "githubUrl": "https://github.com/johndoe/ecommerce-platform",
+    "title": "E-Commerce Platform",
+    "description": "A full-stack e-commerce platform with React frontend and Node.js backend",
+    "longDescription": "A comprehensive e-commerce solution featuring user authentication, product catalog, shopping cart, payment processing, and admin dashboard. Built with modern web technologies and following best practices for security and performance.",
+    "technologies": ["React", "TypeScript", "Node.js", "Express", "MongoDB", "Stripe", "Tailwind CSS"],
+    "images": [
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop"
+    ],
+    "liveUrl": "https://ecommerce-demo.example.com",
+    "githubUrl": "https://github.com/username/ecommerce-platform",
     "category": "Web Application",
     "featured": true,
-    "completedDate": "2024-01-15"
+    "completedDate": "2024-03-15"
+  },
+  {
+    "id": "project-2",
+    "title": "Task Management App",
+    "description": "A collaborative task management application with real-time updates",
+    "longDescription": "A productivity app that helps teams organize and track their work. Features include project boards, task assignments, due dates, file attachments, and real-time collaboration using WebSocket connections.",
+    "technologies": ["Vue.js", "JavaScript", "Socket.io", "Firebase", "Vuetify"],
+    "images": [
+      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop"
+    ],
+    "liveUrl": "https://taskmanager-demo.example.com",
+    "githubUrl": "https://github.com/username/task-manager",
+    "category": "Web Application",
+    "featured": false,
+    "completedDate": "2024-02-20"
+  },
+  {
+    "id": "project-3",
+    "title": "Weather Mobile App",
+    "description": "Cross-platform mobile app for weather forecasting with location-based services",
+    "longDescription": "A beautiful and intuitive weather app that provides accurate forecasts, weather alerts, and location-based weather information. Features include interactive maps, hourly and weekly forecasts, and customizable notifications.",
+    "technologies": ["React Native", "TypeScript", "Redux", "OpenWeatherMap API", "React Navigation"],
+    "images": [
+      "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop"
+    ],
+    "githubUrl": "https://github.com/username/weather-app",
+    "category": "Mobile Application",
+    "featured": true,
+    "completedDate": "2024-01-10"
+  },
+  {
+    "id": "project-4",
+    "title": "Data Visualization Dashboard",
+    "description": "Interactive dashboard for business analytics and data visualization",
+    "longDescription": "A comprehensive analytics dashboard that transforms complex business data into interactive charts and visualizations. Built with D3.js for custom visualizations and includes features like real-time data updates, export capabilities, and responsive design.",
+    "technologies": ["React", "D3.js", "TypeScript", "Chart.js", "Material-UI", "Python", "FastAPI"],
+    "images": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+    ],
+    "liveUrl": "https://analytics-dashboard.example.com",
+    "githubUrl": "https://github.com/username/analytics-dashboard",
+    "category": "Data Visualization",
+    "featured": false,
+    "completedDate": "2023-12-05"
+  },
+  {
+    "id": "project-5",
+    "title": "AI Chat Assistant",
+    "description": "Intelligent chatbot powered by machine learning for customer support",
+    "longDescription": "An AI-powered chat assistant that provides automated customer support using natural language processing. Features include intent recognition, context awareness, integration with knowledge bases, and seamless handoff to human agents when needed.",
+    "technologies": ["Python", "TensorFlow", "Flask", "React", "WebSocket", "NLTK", "Docker"],
+    "images": [
+      "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=600&fit=crop"
+    ],
+    "liveUrl": "https://chatbot-demo.example.com",
+    "githubUrl": "https://github.com/username/ai-chat-assistant",
+    "category": "Machine Learning",
+    "featured": true,
+    "completedDate": "2023-11-20"
+  },
+  {
+    "id": "project-6",
+    "title": "Blockchain Voting System",
+    "description": "Secure and transparent voting system built on blockchain technology",
+    "longDescription": "A decentralized voting platform that ensures election integrity through blockchain technology. Features include voter authentication, transparent vote counting, immutable records, and real-time results tracking while maintaining voter privacy.",
+    "technologies": ["Solidity", "Web3.js", "React", "Ethereum", "IPFS", "MetaMask"],
+    "images": [
+      "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=600&fit=crop"
+    ],
+    "githubUrl": "https://github.com/username/blockchain-voting",
+    "category": "Blockchain",
+    "featured": false,
+    "completedDate": "2023-10-15"
   }
 ]
