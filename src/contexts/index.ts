@@ -4,3 +4,6 @@
 
 export { AuthProvider, useAuth, withAuth } from "./AuthContext";
 export type { AuthContextType, AuthProviderProps, WithAuthProps } from "./AuthContext";
+
+export { AppProvider, useApp } from "./AppContext";
+export type { AppContextType, AppProviderProps } from "./AppContext";

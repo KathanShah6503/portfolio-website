@@ -5,10 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    target: 'es2024',
+    target: 'es2023',
     sourcemap: true,
   },
   esbuild: {
-    target: 'es2024',
+    target: 'es2023',
   },
 })
